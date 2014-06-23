@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="441.88748"
+   height="403.59296"
+   viewBox="0 0 441.88748 403.59296"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="houston-texans.svg">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="221.40313"
+     inkscape:cy="202.5"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g4"
+     transform="translate(-34.596868,-54.907056)">
+    <g
+       id="g6">
+      <path
+         stroke-miterlimit="10"
+         d="m 360.1,124.3 c 94.1,71.6 22.5,82.4 -51,92.8 0,0 -31,-8.6 -84.8,-35.3 C 102.4,121.2 140.8,92.7 236.6,75.5 83.3,8.7 -44.5,125.1 96.5,238.2 l -38.7,27.7 c 31.8,19.5 97.6,60.4 88.1,123 l -32.7,23.4 99.8,45.2 78.8,-35.7 C 292.4,387.1 354.3,369.1 381,298.6 527.6,264.8 490.3,135.8 360.1,124.3 z"
+         id="path8"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:#06192e;stroke-width:2;stroke-miterlimit:10" />
+      <path
+         d="m 386.6,135.5 c 63.2,49.5 19.3,81.1 -57.7,89.7 19.5,82.2 -40.3,157.5 -103.6,215.8 l 58,-26.3 c 4.3,-33.4 63.2,-50.8 91.1,-124.9 131,-29.2 109.6,-123.3 12.2,-154.3 z"
+         id="path10"
+         inkscape:connector-curvature="0"
+         style="fill:#b21e35" />
+      <path
+         d="M 293.1,223.8 C 108.9,152.6 96.7,94.3 211.6,74.1 67.9,35 -16,139.2 126.3,238.6 l -38.2,27.3 c 40.5,27.1 83.5,67.2 68.9,130.3 l -19.2,13.7 73.9,33.5 C 280.4,368.1 316.4,295 293.1,223.8 z m -46.4,114.5 -28.3,-32.2 -32.5,4.8 15,-24.8 -28.3,-32.1 37.6,16.9 15,-24.7 8.2,35.2 37.6,16.9 -32.5,4.9 8.2,35.1 z M 293.1,223.8 C 108.9,152.6 96.7,94.3 211.6,74.1 67.9,35 -16,139.2 126.3,238.6 l -38.2,27.3 c 40.5,27.1 83.5,67.2 68.9,130.3 l -19.2,13.7 73.9,33.5 C 280.4,368.1 316.4,295 293.1,223.8 z m -46.4,114.5 -28.3,-32.2 -32.5,4.8 15,-24.8 -28.3,-32.1 37.6,16.9 15,-24.7 8.2,35.2 37.6,16.9 -32.5,4.9 8.2,35.1 z"
+         id="path12"
+         inkscape:connector-curvature="0"
+         style="fill:#06192e" />
+      <path
+         d="m 386.6,135.5 c 63.2,49.5 19.3,81.1 -57.7,89.7 19.5,82.2 -40.3,157.5 -103.6,215.8 l 58,-26.3 c 4.3,-33.4 63.2,-50.8 91.1,-124.9 131,-29.2 109.6,-123.3 12.2,-154.3 z"
+         id="path14"
+         inkscape:connector-curvature="0"
+         style="fill:#b21e35" />
+    </g>
+  </g>
+</svg>
