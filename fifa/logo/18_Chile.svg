@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27pt" height="18pt" viewBox="0 0 27 18" version="1.1">
+<g id="surface1">
+<rect x="0" y="0" width="27" height="18" style="fill:rgb(83.529412%,16.862745%,11.764706%);fill-opacity:1;stroke:none;"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 9 9 L 27 9 L 27 0 L 0 0 Z M 9 9 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,22.352941%,65.098039%);fill-opacity:1;" d="M 9 9 L 0 9 L 0 0 L 9 0 Z M 9 9 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 4.5 2.25 L 3.804688 4.390625 L 4.875 4.738281 Z M 4.5 2.25 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 4.5 2.25 L 5.195312 4.390625 L 4.125 4.738281 Z M 4.5 2.25 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 6.640625 3.804688 L 4.390625 3.804688 L 4.390625 4.929688 Z M 6.640625 3.804688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 6.640625 3.804688 L 4.820312 5.128906 L 4.160156 4.21875 Z M 6.640625 3.804688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 2.359375 3.804688 L 4.179688 5.128906 L 4.839844 4.21875 Z M 2.359375 3.804688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 2.359375 3.804688 L 4.609375 3.804688 L 4.609375 4.929688 Z M 2.359375 3.804688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 5.824219 6.320312 L 5.128906 4.179688 L 4.058594 4.527344 Z M 5.824219 6.320312 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 5.824219 6.320312 L 4.003906 4.996094 L 4.664062 4.085938 Z M 5.824219 6.320312 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 3.175781 6.320312 L 4.996094 4.996094 L 4.335938 4.085938 Z M 3.175781 6.320312 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 3.175781 6.320312 L 3.871094 4.179688 L 4.941406 4.527344 Z M 3.175781 6.320312 "/>
+</g>
+</svg>
