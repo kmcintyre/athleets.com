@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>Logos</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="blank">
+<meta name="keywords" content="blank">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Courgette">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+		var txtCircle = function(ctx, txt,x,y,radius,ang,pos,clockwise) {
+			console.log(txt);
+			ctx.save();
+			ctx.translate(x,y);						
+			if ( !txt ) txt = 'undef';
+			ctx.textAlign = (pos.textAlign?pos.textAlign:"left");
+			ctx.textBaseline = (pos.textBaseline?pos.textBaseline:'middle');
+			ctx.font = (pos.font?pos.font:"normal normal 24pt Courgette"); 
+			ctx.fillStyle = (pos.color?pos.color:'white');
+			
+			if ( pos.align == "center" && clockwise ) {				  
+				ctx.rotate(ang+Math.PI/2-ctx.measureText(txt).width/radius/2);
+			} else if ( pos.align == "center" ) {				  
+				ctx.rotate(ang-Math.PI/2+ctx.measureText(txt).width/radius/2);
+			} else if ( pos.align == "right" && clockwise ) {
+				ctx.rotate(ang+Math.PI/2-ctx.measureText(txt).width/radius);
+			} else if ( pos.align == "right") {
+				ctx.rotate(ang-Math.PI/2+ctx.measureText(txt).width/radius);
+			} else if ( clockwise ) {
+				ctx.rotate(ang+Math.PI/2);
+			} else {
+				ctx.rotate(ang-Math.PI/2);
+			}
+			for ( var c = 0; c < txt.length; c++) {
+				if ( clockwise ) {
+					ctx.fillText(txt[c], 0, -radius);
+				} else {
+					ctx.fillText(txt[c], 0, radius);
+				}
+				var rot = ctx.measureText(txt[c]).width/radius;
+				if ( clockwise ) {
+					ctx.rotate(+rot);
+				} else {
+					ctx.rotate(-rot);
+				}				
+			}
+			ctx.restore();
+	  	};
+	  	
+	  	var rightHandLogo = function(ctx) {
+	  		base = new Image();
+	  		base.onload = function() {
+				ctx.save();
+				ctx.globalAlpha = .75;
+				ctx.drawImage(base,0,0,125,125);
+				ctx.restore();	  		
+		      	ctx.textAlign="center";
+			  	drawing = new Image()
+				drawing.onload = function() {
+					ctx.save();
+					//ctx.globalAlpha = .75;
+					//ctx.rotate(-Math.PI/8);
+					ctx.drawImage(drawing,10,10,115,115/1.3);
+					ctx.restore();
+					drawing2 = new Image()
+					drawing2.onload = function() {
+						ctx.save();
+						ctx.globalAlpha = 0.75;
+						ctx.rotate(-Math.PI/12);
+						ctx.drawImage(drawing2,6,31,53,53/1.2);
+						ctx.restore();
+				      	txtCircle(ctx, "Athleets", 66, 82, 60, -Math.PI*7/8,
+				      		{font:"normal normal 18pt Courgette", align:'left',textBaseline:'top', color:'black'}, 
+				      		true 
+				      	);	  									
+		      		};
+		      		drawing2.src = "bird.png";
+		      						
+		      	};
+		      	drawing.src = "helmets2.png";
+	    	}  		  	
+	    	base.src = "IMG_3598.JPG";
+	  	}
+
+		var ctx1 = $('#logo')[0].getContext('2d');
+		rightHandLogo(ctx1);
+	  	
+      	
+      	var ctx2 = $('#facebook')[0].getContext('2d');
+      	
+      	drawing3 = new Image()
+		drawing3.onload = function() {
+			ctx2.drawImage(drawing3,0,0);
+      	};
+      	drawing3.src = "facebook.png";
+      	
+      	var ctx3 = $('#google')[0].getContext('2d');
+      	
+      	drawing4 = new Image()
+		drawing4.onload = function() {
+			ctx3.drawImage(drawing4,0,0,29,29);
+      	};
+      	drawing4.src = "google.jpg";
+      	
+      	var ctx4 = $('#twitter')[0].getContext('2d');
+      	
+      	drawing5 = new Image()
+		drawing5.onload = function() {
+			ctx4.drawImage(drawing5,0,0);
+      	};
+      	drawing5.src = "twitter.png";
+
+      	var ctx5 = $('#email')[0].getContext('2d');
+      	
+      	drawing6 = new Image()
+		drawing6.onload = function() {
+			ctx5.drawImage(drawing6,0,0,29,29);
+      	};
+      	drawing6.src = "email.png";
+
+      	var ctx6 = $('#nfl')[0].getContext('2d');
+      	
+      	drawing7 = new Image()
+		drawing7.onload = function() {
+			ctx6.drawImage(drawing7,3.5,0,26.5,29);
+			ctx6.globalCompositeOperation = "destination-out";
+			var gradient = ctx6.createLinearGradient(0, 0, 0, 29);
+			gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
+			gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");
+			ctx6.fillStyle = gradient;
+			ctx6.fillRect(0, 0, 29, 29);			
+      	};
+      	drawing7.src = "nfl.png";
+      	
+      	var ctx7 = $('#instagram')[0].getContext('2d');
+
+      	drawing8 = new Image()
+		drawing8.onload = function() {
+			ctx7.drawImage(drawing8,0,0,29,29);
+      	};
+      	drawing8.src = "instagram.png";
+      	
+		var ctx8 = $('#header')[0].getContext('2d');
+
+      	drawing9 = new Image()
+		drawing9.onload = function() {
+		
+			ctx8.drawImage(drawing9,150,0,890,500);
+			rightHandLogo(ctx8);
+			//var gradient = ctx8.createLinearGradient(100, 0, 990, 500);
+			//gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
+			//gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");	
+			//ctx8.fillStyle = gradient;	
+			//ctx8.fillRect(0, 0, 1500, 500);
+			//txtCircle(ctx8, "Athleets", 52, 70, 60, -Math.PI*7/8,
+      	//		{font:"normal normal 22pt Courgette", align:'left',textBaseline:'top', color:'black'}, 
+      	//		true 
+      //		);
+      	};
+      	drawing9.src = "dark_leather.png";
+      	
+      	var ctx9 = $('#branch')[0].getContext('2d');
+
+      	drawing10 = new Image()
+		drawing10.onload = function() {
+			ctx9.drawImage(drawing10,0,0,129,58);
+      	};
+      	drawing10.src = "branch.png";
+      	      	      	
+      	var ctx10 = $('#aws')[0].getContext('2d');
+      	drawing11 = new Image()
+		drawing11.onload = function() {
+			ctx10.drawImage(drawing11,0,0,127,48);
+			ctx10.globalCompositeOperation = "destination-out";
+			var gradient = ctx10.createLinearGradient(0, 0, 64, 40);
+			gradient.addColorStop(0, "rgba(255, 255, 255, 1.0)");
+			gradient.addColorStop(1, "rgba(255, 255, 255, 0.15)");
+			ctx10.fillStyle = gradient;
+			ctx10.fillRect(0, 0, 127, 48);			
+      	};
+      	drawing11.src = "aws-logo-large.png";
+      	      	      	      	
+});
+</script>
+</head>
+<body>
+    <canvas id="logo" width="125" height="125"></canvas>	
+    <br><br>
+    <canvas id="facebook" width="29" height="29"></canvas>
+    <br><br>    
+    <canvas id="google" width="29" height="29"></canvas>
+    <br><br>
+    <canvas id="twitter" width="29" height="29"></canvas>
+    <br><br>
+    <canvas id="email" width="29" height="29"></canvas>
+    <br><br>
+    <canvas id="nfl" width="29" height="29"></canvas>
+    <br><br>
+    <canvas id="instagram" width="29" height="29"></canvas>
+    <br><br>
+    <canvas id="branch" width="129" height="58"></canvas>
+    <br><br>    
+    <canvas id="header" width="1190" height="500"></canvas>
+    <br><br>    
+    <canvas id="aws" width="127" height="48"></canvas>    
+        
+</body>
+</html>

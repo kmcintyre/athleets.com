@@ -1,0 +1,44 @@
+http://www.premierleague.com/en-gb/clubs.html
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/arsenal
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/aston-villa
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/burnley
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/chelsea
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/crystal-palace
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/everton
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/hull
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/leicester
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/liverpool
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/man-city
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/man-utd
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/newcastle
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/qpr
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/southampton
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/stoke
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/sunderland
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/swansea
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/spurs
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/west-brom
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/west-ham
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/arsenal
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/aston-villa
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/burnley
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/chelsea
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/crystal-palace
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/everton
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/hull
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/leicester
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/liverpool
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/man-city
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/man-utd
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/newcastle
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/qpr
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/southampton
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/stoke
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/sunderland
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/swansea
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/spurs
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/west-brom
+add http://www.premierleague.com/en-gb/clubs/profile.overview.html/west-ham
+outgoing: 0 incoming length: 40
+outgoing: 1 incoming length: 39
+outgoing: 2 incoming length: 38
