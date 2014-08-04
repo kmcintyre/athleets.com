@@ -1,6 +1,8 @@
 define(function() {
 	return { 
-		msg : {},
+		state : {},
+		loaded : true.
+
 		site : 'www.athleets.com',
 		connection : ['ws://localhost:8080'],		
 		color : {
