@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>Logos</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="blank">
+<meta name="keywords" content="blank">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Courgette">
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function() {
+	
+	render_kreig = function(ctx, cstroke, lstroke, fill, tcolor ) {
+		ctx = $('#kreig')[0].getContext('2d');
+		ctx.beginPath();
+		ctx.arc(50,0,45,Math.PI/2,Math.PI);
+		ctx.lineWidth = 5;
+		ctx.strokeStyle = cstroke;
+		ctx.stroke();
+		ctx.lineTo(50, 0);
+		ctx.strokeStyle = lstroke;
+		ctx.stroke();	
+		ctx.lineTo(50, 50);
+		ctx.stroke();
+		ctx.closePath();
+		ctx.fillStyle = fill;
+		ctx.fill();		
+		ctx.beginPath();
+		ctx.arc(35,15,10,0,2*Math.PI);		
+		ctx.strokeStyle = tcolor;
+		ctx.lineWidth = 5;
+		ctx.stroke();	
+	}
+	 
+	function mouseDown(e) {
+		var x = e.clientX - 50
+		var y = e.clientY
+		if ( Math.sqrt( x * x  + y * y ) < 45 ) {	
+			render_kreig( $('#kreig')[0].getContext('2d'), 'rgba(211, 211, 211, 0.88)', 'white', '#fafaf7', '#960018' )
+		}				
+	}
+	$('#kreig')[0].addEventListener("mousedown", mouseDown, false);	
+	render_kreig( $('#kreig')[0].getContext('2d'), 'rgba(211, 211, 211, 0.88)', '#fafaf7', 'white', '#8ED6FF' )	
+});
+</script>
+</head>
+<body>
+	<canvas id="kreig" width="50" height="50"></canvas>
+	<textarea id="textarea"></textarea>    
+</body>
+</html>

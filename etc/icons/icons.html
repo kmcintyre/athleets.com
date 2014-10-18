@@ -55,7 +55,7 @@ $(document).ready(function() {
 	  		base = new Image();
 	  		base.onload = function() {
 				ctx.save();
-				ctx.globalAlpha = .75;
+				ctx.globalAlpha = 0;
 				ctx.drawImage(base,0,0,125,125);
 				ctx.restore();	  		
 		      	ctx.textAlign="center";
@@ -86,9 +86,10 @@ $(document).ready(function() {
 	    	base.src = "IMG_3598.JPG";
 	  	}
 
+
+
 		var ctx1 = $('#logo')[0].getContext('2d');
-		rightHandLogo(ctx1);
-	  	
+		rightHandLogo(ctx1);	  	
       	
       	var ctx2 = $('#facebook')[0].getContext('2d');
       	
@@ -149,17 +150,17 @@ $(document).ready(function() {
       	drawing9 = new Image()
 		drawing9.onload = function() {
 		
-			ctx8.drawImage(drawing9,150,0,890,500);
+			//ctx8.drawImage(drawing9,150,0,890,500);
 			rightHandLogo(ctx8);
-			//var gradient = ctx8.createLinearGradient(100, 0, 990, 500);
-			//gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
-			//gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");	
-			//ctx8.fillStyle = gradient;	
-			//ctx8.fillRect(0, 0, 1500, 500);
-			//txtCircle(ctx8, "Athleets", 52, 70, 60, -Math.PI*7/8,
-      	//		{font:"normal normal 22pt Courgette", align:'left',textBaseline:'top', color:'black'}, 
-      	//		true 
-      //		);
+			var gradient = ctx8.createLinearGradient(100, 0, 990, 500);
+			gradient.addColorStop(0, "rgba(255, 255, 255, 0.15)");
+			gradient.addColorStop(1, "rgba(255, 255, 255, 1.0)");	
+			ctx8.fillStyle = gradient;	
+			ctx8.fillRect(0, 0, 1500, 500);
+			txtCircle(ctx8, "Athleets", 52, 70, 60, -Math.PI*7/8,
+      			{font:"normal normal 22pt Courgette", align:'left',textBaseline:'top', color:'black'}, 
+      			true 
+      		);
       	};
       	drawing9.src = "dark_leather.png";
       	
@@ -190,6 +191,8 @@ $(document).ready(function() {
 <body>
     <canvas id="logo" width="125" height="125"></canvas>	
     <br><br>
+    <canvas id="logo2" width="125" height="125"></canvas>	
+    <br><br>    
     <canvas id="facebook" width="29" height="29"></canvas>
     <br><br>    
     <canvas id="google" width="29" height="29"></canvas>
