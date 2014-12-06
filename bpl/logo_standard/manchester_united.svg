@@ -9,7 +9,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    version="1.1"
-   width="198.125"
+   width="280"
    height="200"
    id="svg38242">
   <defs
@@ -78,7 +78,7 @@
        id="linearGradient39815"
        xlink:href="#linearGradient39809"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(49.179001,49.859679)"
+       gradientTransform="translate(7.179001,49.859679)"
        spreadMethod="reflect" />
     <linearGradient
        x1="368.06281"
@@ -88,7 +88,7 @@
        id="linearGradient39837"
        xlink:href="#linearGradient39839"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(49.179001,49.859679)" />
+       gradientTransform="translate(7.179001,49.859679)" />
     <linearGradient
        x1="368.06281"
        y1="470.93954"
@@ -97,7 +97,7 @@
        id="linearGradient39849"
        xlink:href="#linearGradient39839"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-1,0,0,1,1006.5366,49.859679)" />
+       gradientTransform="matrix(-1,0,0,1,964.5366,49.859679)" />
     <radialGradient
        cx="360.50748"
        cy="438.59348"
@@ -107,7 +107,7 @@
        id="radialGradient39872"
        xlink:href="#linearGradient39856"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0406506,0,0,1.0236802,34.524164,39.473715)" />
+       gradientTransform="matrix(1.0406506,0,0,1.0236802,-7.475836,39.473715)" />
     <radialGradient
        cx="360.50748"
        cy="438.59348"
@@ -117,7 +117,7 @@
        id="radialGradient39876"
        xlink:href="#linearGradient39856"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0406506,0,0,1.0236802,272.18041,39.37996)" />
+       gradientTransform="matrix(1.0406506,0,0,1.0236802,230.18041,39.37996)" />
     <linearGradient
        x1="600.95312"
        y1="404.57532"
@@ -126,7 +126,7 @@
        id="linearGradient39886"
        xlink:href="#linearGradient39839"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(49.179001,49.859679)" />
+       gradientTransform="translate(7.179001,49.859679)" />
     <linearGradient
        x1="600.95312"
        y1="404.57532"
@@ -135,7 +135,7 @@
        id="linearGradient39892"
        xlink:href="#linearGradient39839"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-1,0,0,1,1007.071,49.859679)" />
+       gradientTransform="matrix(-1,0,0,1,965.071,49.859679)" />
     <radialGradient
        cx="446.41611"
        cy="291.62723"
@@ -145,7 +145,7 @@
        id="radialGradient41023"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.81452549,0,0,0.77554538,132.98007,117.08899)"
+       gradientTransform="matrix(0.81452549,0,0,0.77554538,90.98007,117.08899)"
        spreadMethod="pad" />
     <radialGradient
        cx="446.41611"
@@ -156,7 +156,7 @@
        id="radialGradient41037"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-0.81452549,0,0,0.77554538,923.26995,117.08899)"
+       gradientTransform="matrix(-0.81452549,0,0,0.77554538,881.26995,117.08899)"
        spreadMethod="pad" />
     <radialGradient
        cx="478.89362"
@@ -167,7 +167,7 @@
        id="radialGradient41055"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0959884,0,0,1.0475722,3.263157,35.460809)"
+       gradientTransform="matrix(1.0959884,0,0,1.0475722,-38.736843,35.460809)"
        spreadMethod="pad" />
     <radialGradient
        cx="357.13959"
@@ -178,7 +178,7 @@
        id="radialGradient41082"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0879339,-1.9052629,1.6760207,0.95703318,-560.86159,752.39372)" />
+       gradientTransform="matrix(1.0879339,-1.9052629,1.6760207,0.95703318,-602.86159,752.39372)" />
     <linearGradient
        x1="357.73038"
        y1="346.82816"
@@ -187,7 +187,7 @@
        id="linearGradient41090"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(49.179001,49.859679)" />
+       gradientTransform="translate(7.179001,49.859679)" />
     <radialGradient
        cx="357.13959"
        cy="347.09683"
@@ -197,7 +197,7 @@
        id="radialGradient41096"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-1.0879339,-1.9052629,-1.6760207,0.95703318,1617.1116,752.39372)" />
+       gradientTransform="matrix(-1.0879339,-1.9052629,-1.6760207,0.95703318,1575.1116,752.39372)" />
     <linearGradient
        x1="357.73038"
        y1="346.82816"
@@ -206,7 +206,7 @@
        id="linearGradient41098"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-1,0,0,1,1007.071,49.859679)" />
+       gradientTransform="matrix(-1,0,0,1,965.071,49.859679)" />
     <clipPath
        id="clipPath41116">
       <path
@@ -218,8 +218,8 @@
        color-interpolation-filters="sRGB"
        id="filter41136">
       <feGaussianBlur
-         id="feGaussianBlur41138"
-         stdDeviation="3.0914156" />
+         stdDeviation="3.0914156"
+         id="feGaussianBlur41138" />
     </filter>
     <radialGradient
        cx="452.37601"
@@ -230,7 +230,7 @@
        id="radialGradient41150"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.85678822,1.2551433e-7,-1.1285383e-7,0.77036487,113.96465,179.22742)" />
+       gradientTransform="matrix(0.85678822,1.2551433e-7,-1.1285383e-7,0.77036487,71.96465,179.22742)" />
     <radialGradient
        cx="452.37601"
        cy="563.3623"
@@ -240,7 +240,7 @@
        id="radialGradient41154"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-0.85678822,1.2551433e-7,1.1285383e-7,0.77036487,944.03535,179.22742)" />
+       gradientTransform="matrix(-0.85678822,1.2551433e-7,1.1285383e-7,0.77036487,902.03535,179.22742)" />
     <radialGradient
        cx="479.62494"
        cy="566.7077"
@@ -250,7 +250,7 @@
        id="radialGradient41162"
        xlink:href="#linearGradient41025"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.85026621,-1.515173e-7,1.1263369e-7,0.63206394,120.995,258.44471)" />
+       gradientTransform="matrix(0.85026621,-1.515173e-7,1.1263369e-7,0.63206394,78.995,258.44471)" />
   </defs>
   <metadata
      id="metadata38247">
@@ -265,7 +265,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-380.125,-326.86768)"
+     transform="translate(-338.125,-326.86768)"
      id="layer1">
     <path
        d="m 488.97842,518.76777 c -0.79795,2.34626 -3.3402,8.09991 -9.49422,8.09991 -6.99958,0 -9.42703,-7.57354 -9.54463,-7.89272 l -0.20718,-0.71676 c 0,0 6.02803,0.50117 9.34863,0.50117 3.3122,0 8.98746,-0.32758 9.9058,-0.50117 l -0.008,0.50957 z"

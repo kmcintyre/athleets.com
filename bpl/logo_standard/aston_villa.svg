@@ -8,9 +8,9 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.0"
-   width="143.34357"
-   height="200.41701"
-   viewBox="0 0 17.114249 23.914505"
+   width="280"
+   height="200.42"
+   viewBox="0 0 33.4301 23.914862"
    id="svg2817">
   <metadata
      id="metadata17">
@@ -34,7 +34,7 @@
     </clipPath>
   </defs>
   <g
-     transform="matrix(0.26115791,0,0,0.26115791,-89.377093,-127.07335)"
+     transform="matrix(0.26115791,0,0,0.26115791,-81.497155,-127.07299)"
      id="layer1">
     <g
        transform="matrix(1.25,0,0,-1.25,248.58641,1193.9719)"

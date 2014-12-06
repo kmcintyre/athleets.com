@@ -8,8 +8,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.0"
-   width="208.875"
-   height="200.40965"
+   width="280"
+   height="200.41"
    id="svg2419">
   <defs
      id="defs2421">
@@ -17,15 +17,15 @@
        color-interpolation-filters="sRGB"
        id="filter4463">
       <feGaussianBlur
-         id="feGaussianBlur4465"
-         stdDeviation="3.9202812" />
+         stdDeviation="3.9202812"
+         id="feGaussianBlur4465" />
     </filter>
     <filter
        color-interpolation-filters="sRGB"
        id="filter4107">
       <feGaussianBlur
-         id="feGaussianBlur4109"
-         stdDeviation="4.6895416" />
+         stdDeviation="4.6895416"
+         id="feGaussianBlur4109" />
     </filter>
     <filter
        x="-0.079233199"
@@ -35,8 +35,8 @@
        color-interpolation-filters="sRGB"
        id="filter3318">
       <feGaussianBlur
-         id="feGaussianBlur3320"
-         stdDeviation="6.5563441" />
+         stdDeviation="6.5563441"
+         id="feGaussianBlur3320" />
     </filter>
   </defs>
   <metadata
@@ -52,7 +52,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-249.8125,-394.8716)"
+     transform="translate(-215.8125,-394.87125)"
      id="layer1">
     <path
        d="m 413.56972,533.42299 c 0,0 39.67948,-13.84133 28.73049,-46.72533 -4.37027,-13.12559 -29.01447,-24.84481 -41.96603,-33.21731 -12.95585,-8.37525 -38.81446,-16.72813 -28.98582,-37.45656 3.42726,-7.22805 13.41141,-8.87687 24.48806,-4.57992 10.71532,4.15676 16.54258,13.37995 31.23353,21.65376 1.05848,0.59612 0.98469,-2.77091 0.79414,-3.97066 -0.45731,-2.87958 -4.45993,-5.57106 -4.76479,-8.47074 -0.27837,-2.64783 3.95256,-6.15035 2.64712,-8.47075 -3.35006,-5.95459 -14.38055,-10.17154 -24.15216,-13.30359 -20.07317,-6.43395 -39.25773,3.58537 -44.67264,14.36244 -10.61574,21.1281 4.30368,41.65026 33.35355,56.64809 23.63947,12.20455 44.7552,18.08297 41.69191,40.10368 -1.20147,8.6371 -18.39736,23.42689 -18.39736,23.42689 z"

@@ -8,8 +8,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
-   width="69.391251"
-   height="86.253372"
+   width="280"
+   height="200"
    id="svg2"
    xml:space="preserve"><metadata
      id="metadata8"><rdf:RDF><cc:Work
@@ -43,7 +43,7 @@
        id="clipPath696"><path
          d="m 221.926,28.921 151.424,0 0,35.803 -151.424,0 0,-35.803 z"
          id="path698" /></clipPath></defs><g
-     transform="matrix(1.25,0,0,-1.25,-250.29012,1007.0359)"
+     transform="matrix(1.25,0,0,-1.25,-144.53527,1063.9092)"
      id="g10"><g
        transform="matrix(2.3187498,0,0,2.3187498,204.49085,724.43063)"
        id="g108"><path

@@ -8,8 +8,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
-   width="170.6436"
-   height="200.00002"
+   width="280"
+   height="200"
    id="svg3063">
   <defs
      id="defs3065" />
@@ -26,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-237.53533,-329.50503)"
+     transform="translate(-187.53533,-329.50505)"
      id="layer1">
     <g
        transform="matrix(0.46267381,0,0,0.46267381,-791.45197,-226.46649)"
@@ -60,7 +60,7 @@
          id="path4325"
          style="fill:#ffffff;fill-rule:evenodd" />
       <polygon
-         points="2386.095,1335.212 2386.095,1335.212 2430.278,1335.212 2430.278,1507.98 2386.095,1507.98 "
+         points="2386.095,1507.98 2386.095,1335.212 2386.095,1335.212 2430.278,1335.212 2430.278,1507.98 "
          id="polygon4327"
          style="fill:#e03a3e;fill-rule:evenodd" />
       <path
