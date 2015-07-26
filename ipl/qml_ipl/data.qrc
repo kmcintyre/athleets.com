@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/ipl/main.qml</file>
+        <file>qml/ipl/greeting.js</file>
+    </qresource>
+</RCC>
