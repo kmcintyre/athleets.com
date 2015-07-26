@@ -37,7 +37,7 @@ import "greeting.js" as Greeting
 
 
 Rectangle {
-
+    id: rectangle1
     width: 500
     height: 500
 
@@ -59,17 +59,21 @@ Rectangle {
     }
 
     TextArea {
-        width: 490
+        width: 500
         id: messageBox
+        x: 0
+        y:100
         text: qsTr("Empty")
         anchors.top: parent
     }
 
-    MouseArea {
-        anchors.fill: parent
+    Button {
         onClicked: {
-            Greeting.onClick(socket)
-            //Qt.quit();
+            Greeting.onClick(socket, connect)
         }
+        id: connect
+        x: 20
+        y: 20
+        text: qsTr("Connect")
     }
 }
