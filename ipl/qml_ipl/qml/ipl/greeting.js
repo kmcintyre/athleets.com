@@ -8,4 +8,9 @@ function sendRole(socket) {
         socket.sendTextMessage(JSON.stringify(JSON.parse('{ "data": "instagram", "role": "data"}')));
     }
 }
+function onClick(socket) {
+    if ( !socket.active ) {
+        socket.active = true;
+    }
+}
 

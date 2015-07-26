@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
     QQuickView view;
     view.setSource(QUrl(QStringLiteral("qrc:/qml/ipl/main.qml")));
     view.show();
+    view.setResizeMode(QQuickView::SizeRootObjectToView);
+
 
     return app.exec();
 }

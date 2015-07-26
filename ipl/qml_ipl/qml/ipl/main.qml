@@ -32,6 +32,7 @@
 ****************************************************************************/
 import QtQuick 2.0
 import QtWebSockets 1.0
+import QtQuick.Controls 1.4
 import "greeting.js" as Greeting
 
 
@@ -42,7 +43,7 @@ Rectangle {
 
     WebSocket {
         id: socket
-        url: "ws://localhost:8080"
+        url: "ws://service.athleets.com:8080"
         onTextMessageReceived: {
             messageBox.text = message
             Greeting.sendRole(socket)
@@ -57,16 +58,17 @@ Rectangle {
         active: false
     }
 
-    Text {
+    TextArea {
+        width: 490
         id: messageBox
         text: qsTr("Empty")
-        anchors.centerIn: parent
+        anchors.top: parent
     }
 
     MouseArea {
         anchors.fill: parent
-        onClicked: { 
-        	socket.active = true;      	  
+        onClicked: {
+            Greeting.onClick(socket)
             //Qt.quit();
         }
     }
