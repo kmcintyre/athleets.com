@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/ipl/main.qml</file>
-        <file>qml/ipl/greeting.js</file>
+        <file>qml/ipl/schedule.js</file>
+        <file>qml/ipl/tweet.js</file>
+        <file>qml/ipl/emblem.js</file>
     </qresource>
 </RCC>

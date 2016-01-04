@@ -13,4 +13,5 @@ RESOURCES += data.qrc
 OTHER_FILES += qml/ipl/main.qml
 
 DISTFILES += \
-    qml/ipl/ipl.py
+    qml/ipl/ipl.py \
+    qml/ipl/admin.qml

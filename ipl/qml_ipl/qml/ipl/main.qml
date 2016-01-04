@@ -33,47 +33,139 @@
 import QtQuick 2.0
 import QtWebSockets 1.0
 import QtQuick.Controls 1.4
-import "greeting.js" as Greeting
+import QtQuick.Layouts 1.2
+import QtQuick.Controls.Styles 1.4
+import "schedule.js" as Schedule
+import "tweet.js" as Tweet
+import "emblem.js" as Emblem
 
+ColumnLayout {
 
-Rectangle {
-    id: rectangle1
-    width: 500
-    height: 500
+    id: layout
+    spacing: 2
+    width:414
+    height:736
 
-    WebSocket {
-        id: socket
-        url: "ws://service.athleets.com:8080"
-        onTextMessageReceived: {
-            messageBox.text = message
-            Greeting.sendRole(socket)
+    onVisibleChanged: {
+        console.log('visbility changed')
+    }
+    onActiveFocusChanged: {
+        console.log('active focus changed')
+    }
+
+    Rectangle {
+        border.color: "black"
+        border.width: 5
+        radius: 10
+        Layout.preferredWidth: parent.width
+        Label {
+            anchors.fill: parent
+            id: status
+            text: 'status'
         }
-        onStatusChanged: if (socket.status == WebSocket.Error) {
-                             console.log("Error: " + socket.errorString)
-                         } else if (socket.status == WebSocket.Open) {
-                             console.log("Open-")
-                         } else if (socket.status == WebSocket.Closed) {
-                             messageBox.text += "\nSocket closed"
-                         }
-        active: false
     }
 
     TextArea {
-        width: 500
         id: messageBox
-        x: 0
-        y:100
-        text: qsTr("Empty")
-        anchors.top: parent
+        Layout.preferredWidth: parent.width
+    }
+
+    Label {
+        id: tweetTxt
+        wrapMode: "Wrap"
+        Component.onCompleted: {
+            Tweet.addListener(tweetTxt)
+        }
+        function received(msg) {
+            tweetTxt.text = msg.tweet_txt
+        }
+    }
+
+    Label {
+        id: label_team
+        Component.onCompleted: {
+            Tweet.addListener(label_team)
+        }
+        function received(msg) {
+            try {
+                label_team.text = msg.team
+            } catch (err) {
+                console.log('no team')
+                label_team.text = '';
+            }
+        }
+    }
+
+    Label {
+        id: label_twitter
+        Component.onCompleted: {
+            Tweet.addListener(label_twitter)
+        }
+        function received(msg) {
+            label_twitter.text = msg.twitter
+        }
+    }
+
+    Label {
+        id: label_league
+        Component.onCompleted: {
+            Tweet.addListener(label_league)
+        }
+        function received(msg) {
+            label_league.text = msg.league
+        }
     }
 
     Button {
-        onClicked: {
-            Greeting.onClick(socket, connect)
-        }
-        id: connect
-        x: 20
-        y: 20
+        id: button
+        x: 40
+        y: 10
         text: qsTr("Connect")
+        onClicked: {
+            if ( !socket.active ) {
+                socket.active = true;
+                button.text = "Connecting..."
+            } else if (button.text === "Connected") {
+                spring.start()
+                button.text = "Closing";
+                socket.active = false;
+            } else {
+                button.text = "Hold On";
+            }
+        }
+    }
+
+    WebSocket {
+        id: socket
+
+        url: 'ws://service.athleets.com:8080'
+        //url: 'ws://localhost:8080'
+        onTextMessageReceived: {
+            console.log('received message')
+            messageBox.text = message
+            try {
+                var json = JSON.parse(message)
+                if ( json.tweet_txt ) {
+                    Tweet.receivedJson(json)
+                } else {
+                    console.log('msg:', Object.keys(json))
+                }
+            } catch (err) {
+                console.log('error casting json:', err)
+            }
+        }
+        onStatusChanged: if (socket.status == WebSocket.Error) {
+            console.log('Error:', socket.errorString)
+        } else if (socket.status == WebSocket.Open) {
+            console.log('Open!', socket.status)
+            button.text = "Connected"
+            var outgoing = JSON.stringify(JSON.parse('{ "data": "data", "role": "data"}'))
+            socket.sendTextMessage(outgoing);
+            console.log('sent:', outgoing);
+        } else if (socket.status == WebSocket.Closed) {
+            console.log('Closed!', socket.status)
+            button.text = "Connect"
+            messageBox.text += "\nSocket closed"
+        }
     }
 }

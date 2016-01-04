@@ -1,0 +1,78 @@
+<html>
+<style>
+input[name="cc1"]::before {
+	content:" "
+}
+input[type="text"] {
+	border: none;
+	border-color: transparent;
+}
+.card {
+   box-shadow:0px 0px 5px #6192D1;
+   -webkit-box-shadow: 0px 0px 5px  #6192D1;
+   -webkit-padding: 3px;
+    
+    border-width: 2px;
+    border-color: transparent;
+    border-style: inset;
+   outline: 0;
+}
+.card  {
+	display:inline-block;
+}
+.card .credit {
+	float:left;
+}
+:focus {
+    outline: 0;
+}
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+#translate3d {
+	transform: translate3d(80px, 0px, 0px);
+}
+.credit {
+	display:none;
+}
+</style>
+<input type="hidden" name="numbers_only">
+<figure class="card"></figure>
+<input type="text" class="credit" maxlength="4" name="cc0" size="1"/>
+<input type="text" class="credit" name="cc1"  size="4" size="1"/>
+<input type="text" class="credit" maxlength="4" name="cc2" size="1"/>
+<input type="text" class="credit" maxlength="4" name="cc3" size="1"/>
+<script>
+document.querySelector('.card').addEventListener("focus", function(e) {
+	console.log('yo:', document.querySelector('.card').lastChild); 
+	document.querySelector('.card').lastChild.focus()	
+})
+var asdf = ['input[name="cc0"]','input[name="cc1"]','input[name="cc2"]']
+asdf.forEach(function (el) { 
+	console.log(el);
+	document.querySelector(el).addEventListener("input", function(e) {
+		if ( e.target.value.length == e.target.getAttribute('maxlength') && e.target == document.querySelector('.card').lastChild ) {
+			document.querySelector('.card').appendChild( 
+				document.querySelector('input[name="cc' + document.querySelector('.card').children.length + '"]').parentNode.removeChild(
+					document.querySelector('input[name="cc' + document.querySelector('.card').children.length + '"]')
+				) 
+			);
+			document.querySelector('.card').lastChild.focus()
+		} else if (e.target.name == 'cc0' && !document.querySelector('.card').classList.contains('payment_type') && e.target.value.length > 2)  {
+			console.log('YO');
+			if ( e.target.value.substring(0,1) == 3 ) {
+				document.querySelector('input[name="cc1"]').setAttribute('maxlength', 6);				
+				document.querySelector('input[name="cc2"]').setAttribute('maxlength', 5);
+			} else if ( e.target.value.substring(0,1) == 4 || e.target.value.substring(0,1) == 5 ) {
+				document.querySelector('input[name="cc1"]').setAttribute('maxlength', 4);
+			}
+		}	
+	});
+});
+window.onload = function() {
+	document.querySelector('.card').appendChild( document.querySelector('input[name="cc0"]').parentNode.removeChild( document.querySelector('input[name="cc0"]')) );
+}
+</script>
+<div id="translate3d">test</div>
+</html>

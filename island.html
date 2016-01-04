@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Island</title>
+<meta name="description"
+	content="Island counter">
+<style>
+body {
+	font-size:200%;
+	font-family: monospace;
+}
+input, button {
+	font-size:120%;
+}
+#generatedmap::before {
+	display:table-cell;
+	content: "Generated Map:"
+}
+#resultmap::before {
+	display:table-cell;
+	content: "Resulting Map:"
+}
+#count::before {
+	display:table-cell;
+	content: "Tally Ho' Count:"
+}
+#correctedcount::before {
+	display:table-cell;
+	content: "Island Count:"
+}
+#bridges::before {
+	display:table-cell;
+	content: "Bridges:"
+}
+</style>
+</head>
+<body>
+<script>
+function formatmap(m) {
+	return JSON.stringify(m).replace('[[','[').replace(']]',']').replace(/\],\[/g,']<br>[').replace(/\"/g,'');
+}
+function seeland(x,y,map) {
+	try {
+		return map[x][y];
+	} catch (err) {
+		return 0;
+	}
+}
+function runmap(m) {
+	var count = 0;
+	var bridges = [];
+	for (var x = 0; x < m.length; x++) {		
+		for (var y = 0; y < m[x].length; y++) {
+			if ( m[x][y] == 1 ) {
+				if ( seeland(x,y+1,m) && seeland(x,y+1,m) != 0 && seeland(x,y+1,m) != 1 ) {
+					console.log('bridge to right:', seeland(x,y+1,m));
+					m[x][y] = m[x][y+1]
+				} else {
+					m[x][y] = String.fromCharCode(97+count);
+					count += 1;
+				}				
+			}
+			if ( m[x][y] != 0 ) {
+				if ( seeland(x+1,y,m) && seeland(x+1,y,m) == 1 ) {
+					m[x+1][y] = m[x][y] 
+				} else if ( seeland(x+1,y,m) && seeland(x+1,y,m) != m[x][y] ) {
+					var bridge = [m[x][y],m[x+1][y]].sort().join('-')
+					if ( bridges.indexOf(bridge) == -1 ) {
+						bridges.push(bridge);
+					}
+				}
+				if ( seeland(x,y+1,m) && seeland(x,y+1,m) == 1 ) {
+					m[x][y+1] = m[x][y] 
+				} else if ( seeland(x,y+1,m) && seeland(x,y+1,m) != m[x][y] ) {
+					var bridge = [m[x][y],m[x][y+1]].sort().join('-')
+					if ( bridges.indexOf(bridge) == -1 ) {
+						bridges.push(bridge);
+					}
+				}
+			}
+		}
+	}
+	document.getElementById('count').innerHTML = count;
+	document.getElementById('bridges').innerHTML = bridges;
+	document.getElementById('correctedcount').innerHTML = count-bridges.length;
+	document.getElementById('resultmap').innerHTML = formatmap(m)
+}
+function generatemap() {
+	var m = [];
+	for (var x = 0; x < parseInt(document.getElementById('mapwidth').value); x++ ) {
+		m[x] = [];
+		for (var y = 0; y < parseInt(document.getElementById('mapheight').value); y++ ) {
+			m[x][y] = Math.floor(Math.random()*2);
+		}	
+	}
+	document.getElementById('generatedmap').innerHTML = formatmap(m)
+	return m
+}
+</script>
+Random Map Maker
+<br>
+<input id="mapwidth" type="text" value="3" size="3"> x <input id="mapheight"type="text" value="3" size="3">
+<button onClick="runmap(generatemap())">test</button>
+<hr>
+<div id="generatedmap"></div>
+<div id="count"></div>
+<div id="bridges"></div>
+<div id="correctedcount"></div>
+<div id="resultmap"></div>
+</body>
+</html>
