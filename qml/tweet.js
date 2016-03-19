@@ -8,10 +8,8 @@ function addListener(listener) {
 }
 
 function receivedJson(json) {
-    console.log('received json:', listeners.length, Object.keys(json))
+    console.log('received json:', listeners.length)
     listeners.forEach(function (listener) {
-        console.log('listener:', listener)
         listener.received(json)
     })
-    console.log('   ');
 }

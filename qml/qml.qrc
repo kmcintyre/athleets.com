@@ -4,5 +4,12 @@
         <file>emblem.js</file>
         <file>schedule.js</file>
         <file>tweet.js</file>
+        <file>intro.qml</file>
+        <file>stream.qml</file>
+        <file>intro1.qml</file>
+        <file>site.js</file>
+        <file>controls.qml</file>
+        <file>sound1.wav</file>
+        <file>sound2.wav</file>
     </qresource>
 </RCC>
