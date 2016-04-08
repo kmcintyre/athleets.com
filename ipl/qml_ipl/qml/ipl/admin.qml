@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 Flipable {
+
     id: flipable
     width: 240
     height: 240
