@@ -1,4 +1,4 @@
-import QtQuick 2.3
+import QtQuick 2.5
 import QtQuick.Window 2.2
 
 import QtWebSockets 1.0
@@ -9,11 +9,10 @@ import QtQuick.XmlListModel 2.0
 import QtQml.Models 2.1
 import QtMultimedia 5.0
 
-import "schedule.js" as Schedule
 import "tweet.js" as Tweet
-import "emblem.js" as Emblem
 
 Item {
+    objectName: "stream"
 
     width: parent.width
     height: parent.height

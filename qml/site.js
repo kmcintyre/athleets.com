@@ -1,3 +1,3 @@
 function domain() {
-    return "athleets.com"
+    return "d1tweets.com"
 }
