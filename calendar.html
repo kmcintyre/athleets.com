@@ -45,9 +45,9 @@ var percent = d3.format(".1%"),
 var color = d3.scale.quantize()
     .domain([-.05, .05])
     .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
-
+var d = new Date();
 var svg = d3.select("body").selectAll("svg")
-    .data(d3.range(1990, 2011))
+    .data(d3.range(d.getFullYear()-1, d.getFullYear()))
   .enter().append("svg")
     .attr("width", width)
     .attr("height", height)
