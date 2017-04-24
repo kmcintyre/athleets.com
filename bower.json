@@ -1,0 +1,18 @@
+{
+  "name": "athleets.com",
+  "version": "0.1",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "libs"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-aria": "latest",
+    "angular-messages": "latest",
+    "angular-material": "latest",
+    "angular-local-storage": "latest",
+    "components-font-awesome": "latest"
+  }
+}

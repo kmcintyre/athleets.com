@@ -1,0 +1,64 @@
+<md-toolbar md-scroll-shrink ng-if="true">
+   <div class="md-toolbar-tools" layout-xs="column">
+      <h3>
+         <span>{{title}}</span>
+      </h3>
+      <span flex></span>        
+      <md-button 
+         ng-class="configuring.leagues ? 'button_active' : 'button_inactive'" 
+         aria-label="menu" style="background:transparent" ng-click="configure('leagues')">
+         <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Configue</md-tooltip>
+         <i class="fa fa-cog one-five"></i>
+      </md-button>
+      <md-button
+         ng-class="configuring.socialmedia ? 'button_active' : 'button_inactive'" 
+         aria-label="menu" style="background:transparent" ng-click="configure('socialmedia')">
+         <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Social Media</md-tooltip>
+         <i class="fa fa-twitter two-zero"></i>
+         <i class="fa fa-instagram two-zero"></i>
+         <i class="fa fa-facebook two-zero"></i>
+         <i class="fa fa-snapchat-ghost two-zero"></i>
+      </md-button>
+   </div>
+</md-toolbar>
+<md-content layout="row" layout-wrap>
+   <div
+      ng-repeat="team in teams | orderBy:['team']"
+      flex-gt-md="25"
+      flex-md="33"
+      flex-sm="100"
+      ng-class="{ grayscale: !team.on, fade: true }"
+      >
+      <md-card>
+         <md-card-header>
+            <md-card-avatar>
+               <a ui-sref="players({'league': team.league, 'team':team.team})">      
+               		<img ng-src="http://{{team.site}}/{{team.league}}/large/{{team.twitter}}.png" alt="{{team.twitter}}">
+               </a>  
+            </md-card-avatar>
+            <md-card-header-text>
+               <span class="md-title">
+               {{team.team}} 
+               <a ng-if="team.twitter" class="twitter" title="{{team.twitter}}" href="https://twitter.com/{{team.twitter}}" target-blank><i class="fa fa-twitter one-five"></i></a>
+               <a ng-if="team.instagram" class="instagram"title="{{team.instagram}}" href="https://www.instagram.com/{{team.instagram}}" target-blank><i class="fa fa-instagram one-five"></i></a>
+               <a ng-if="team.facebook" class="facebook"title="{{team.facebook}}" href="https://www.facebook.com/{{team.facebook}}" target-blank><i class="fa fa-facebook-square one-five"></i></a>
+               <a ng-if="team.linkedin" class="linkedin"title="{{team.linkedin}}" href="https://www.linkedin.com/{{team.linkedin}}" target-blank><i class="fa fa-linkedin one-five"></i></a>
+               </span>
+               <span class="md-subhead"></span>
+            </md-card-header-text>
+         </md-card-header>
+         <img ng-src="http://{{team.site}}/{{team.league}}/bgimage_large/{{team.twitter}}.png" class="md-card-image"
+            err-src="http://s3.amazonaws.com/scewpt.com/1500x500.png"
+            >
+         <md-card-title>
+            <md-card-title-text><span class="md-headline"></span></md-card-title-text>
+         </md-card-title>
+         <md-card-actions layout="row" layout-align="end start">
+            <md-switch ng-change="on = !on" ng-model="team.on" aria-label="{{ team.team }}"></md-switch>
+         </md-card-actions>
+         <md-card-content>
+            <p></p>
+         </md-card-content>
+      </md-card>
+   </div>
+</md-content>

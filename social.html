@@ -1,0 +1,28 @@
+<md-toolbar md-scroll-shrink ng-if="true">
+   <div class="md-toolbar-tools" layout-xs="column">
+      <h3>
+         <span>{{title}}</span>
+      </h3>
+      <span flex></span>        
+      <md-button 
+         ng-class="configuring.leagues ? 'button_active' : 'button_inactive'" 
+         aria-label="menu" style="background:transparent" ng-click="configure('leagues')">
+         <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Configue</md-tooltip>
+         <i class="fa fa-cog one-five"></i>
+      </md-button>
+      <md-button
+         ng-class="configuring.socialmedia ? 'button_active' : 'button_inactive'" 
+         aria-label="menu" style="background:transparent" ng-click="configure('socialmedia')">
+         <md-tooltip md-direction="bottom" md-visible="tooltipVisible">Social Media</md-tooltip>
+         <i class="fa fa-twitter two-zero"></i>
+         <i class="fa fa-instagram two-zero"></i>
+         <i class="fa fa-facebook two-zero"></i>
+         <i class="fa fa-snapchat-ghost two-zero"></i>
+      </md-button>
+   </div>
+</md-toolbar>
+<md-content layout="row" layout-wrap>
+   <div>
+      Social Media
+   </div>
+</md-content>
