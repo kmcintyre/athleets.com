@@ -13,6 +13,7 @@
     "angular-messages": "latest",
     "angular-material": "latest",
     "angular-local-storage": "latest",
+    "angular-ui-router": "latest",
     "components-font-awesome": "latest"
   }
 }
