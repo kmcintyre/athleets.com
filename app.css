@@ -2,6 +2,28 @@ body {
   overflow-y: hidden;
 }
 
+md-card md-card-header md-card-avatar {
+	width: 66px;
+	height: 66px;
+}
+md-card md-card-header md-card-avatar+md-card-header-text .md-title {
+	font-size: 16px;
+	font-weight: bold;
+}
+.down- {
+  transform: translateY(3px);
+}
+.selected-sort {
+	font-size:20px;
+	text-transform: none;
+}
+.subhead:before {
+	content: attr(data-subhead) ": ";	
+}
+.md-scale.md-is-open .md-fab-action-item {
+  transform: scale(1);
+}
+
 .grayscale {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
