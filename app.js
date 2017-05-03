@@ -16,20 +16,48 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
 	
 }).config(function(localStorageServiceProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
     
-	$urlRouterProvider.otherwise('/');
+	
 	$locationProvider.hashPrefix('');
-	$stateProvider.state('site', { 
-		url: '/',
-        templateUrl: 'index_site.html'	
-    }).state('league', { 
-		url: '/:league',
-        templateUrl: 'index_league.html',
-        controller: 'leagueCtrl'
-    }).state('team', { 
-		url: '/:league/:team',
-        templateUrl: 'index_team.html',
-        controller: 'teamCtrl'
-    })
+	$urlRouterProvider.otherwise('/');
+	
+	$stateProvider.state('site', {
+        abstract: true,
+        templateUrl: 'index_site.html'
+    }).state('site.index', {
+    	url: '/',
+    	views: {
+    		'toolbar': {
+    			templateUrl: 'index_toolbar.html'
+    		},
+    		'content': {
+    			templateUrl: 'index_leagues.html'    			
+    		}
+    	}		
+    }).state('site.league', {
+    	url: '/:league',
+    	views: {
+    		'toolbar': {
+    			templateUrl: 'league_toolbar.html',
+    			controller: 'teamsCtrl'
+    		},
+    		'content': {
+    			templateUrl: 'league_teams.html',
+    			controller: 'teamsCtrl'
+    		}
+    	}    	    
+    }).state('site.team', {
+    	url: '/:league/:team',    	
+    	views: {
+    		'toolbar': {
+    			templateUrl: 'team_toolbar.html',
+    			controller: 'playersCtrl'
+    		},
+    		'content': {
+    			templateUrl: 'team_players.html',
+    			controller: 'playersCtrl'
+    		}
+    	}    	    
+    });
     
 }).factory('site', function($http, localStorageService) {	
 
@@ -38,10 +66,11 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
 		    cache: true
 		}).then(function(res) { 
 			return res.data.map(function(entity) {
-        		if ( !localStorageService.get(entity.profile) ) {
-        			localStorageService.set(entity.profile, { 'on': true })        			
-        		}
-        		return angular.merge({}, entity, localStorageService.get(entity.profile));
+        		//if ( localStorageService.get(entity.profile) ) {
+        			//localStorageService.set(entity.profile)
+        			//localStorageService.get(entity.profile)
+        		//}
+        		return angular.merge({}, entity, { on: true });
             });    						
         });    			
 	}
@@ -54,6 +83,7 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
         	var fn = groupname + 'Filter';
         	
     		return get(url).then(function(entities) {
+    			console.log(entities)
     			var l = { value: groupname }
     			l.label = [capitalize(l.value), entities.length].join(' ');
     			$scope[pn] = l.value;
@@ -86,15 +116,9 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
             		            		
             	}
             	
-            	$scope[groupname] = entities;
-    			
     			$scope.$watch(groupname, function(entities) {
                 	console.log('entities:', entities.length, groupname)
-                	var filtered = entities.map(function (entity) {
-                		console.log(entity.on)
-                		localStorageService.set(entity.profile, entity)
-                		return entity;
-                	}).filter(function(entity) {
+                	var filtered = entities.filter(function(entity) {
                 		return entity.on != true
                 	})
                 	
@@ -108,9 +132,9 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
                 	if ( $scope[pln].length == 1 ) {                		
                 		//on.label = [entities.length - filtered.length, capitalize(on.value)].join(' ')
                 		
-                		var on = {value:'on'}
+                		var on = { value:'on' }
                 		on.label = [entities.length - filtered.length, capitalize(on.value)].join(' ')
-                		var off = {value: 'off', inverse: on.value }
+                		var off = { value: 'off', inverse: on.value }
                 		off.label = [filtered.length, capitalize(off.value)].join(' ')
                 		
                 		$scope[pln].unshift(on, off);
@@ -124,35 +148,51 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
                 		scope_off.label = [filtered.length, capitalize(scope_off.value)].join(' ')
                 		
                 	}               	              
-                }, true);
-    			
+                }, true);    			
     			return entities;
+        	}, function (error) {
+        		console.log('site error:', error)
         	});	    		    			
 		}
 	};    	    	  
 }).controller('ctrl', function ($scope, site) { 
 	$scope.title = 'Chill with pros';
-	['leagues'].forEach(function (groupname) {
-    	site.load(groupname, $scope.url_prefix() + '/site/' + groupname, $scope);
-    });		
-
-}).controller('leagueCtrl', function ($scope, $stateParams, site) { 
-	console.log('league:', $stateParams.league);
-	$scope.league = $scope.leagues.filter(function (league) { return league.league == $stateParams.league })[0]
-	return site.load('teams', $scope.url_prefix() + '/site/' + $stateParams.league + '/teams', $scope).then(function (teams) {
+	//['leagues', 'operators', 'curators']
+	Promise.all(['operators', 'leagues'].map(function (groupname) {
+		site.load(groupname, $scope.url_prefix() + '/site/' + groupname, $scope).then(function (entities) {
+			$scope[groupname] = entities
+		})		
+	})).then(function (entities) {
+		$scope.operator_by_role = function (role) {
+			if ( $scope.operators ) {
+				return $scope.operators.filter(function (operator) { return operator.role == role; })[0]
+			}			
+		}
+	});
+	
+}).controller('teamsCtrl', function ($scope, $stateParams, site) {
+	console.log('teamsCtrl:', $stateParams.league);	
+	site.load('teams', $scope.url_prefix() + '/site/' + $stateParams.league + '/teams', $scope).then(function (teams) {
 		teams.forEach(function (team) {
 			team.team = team.profile.split(':')[1];
-		})
+		});
+		$scope.teams = teams;
+	})
+	$scope.$watch('leagues', function (leagues) {
+		if (leagues) {
+			$scope.league = leagues.filter(function (league) { return league.league == $stateParams.league })[0]
+		}		
 	})	
-}).controller('teamCtrl', function ($scope, $stateParams, site) { 
-	console.log('team:', $stateParams.team, 'teams:', $scope.teams);
-	$scope.league = $scope.leagues.filter(function (league) { return league.league == $stateParams.league })[0]
-	return site.load('teams', $scope.url_prefix() + '/site/' + $stateParams.league + '/teams', $scope).then(function (teams) {
+}).controller('playersCtrl', function ($scope, $stateParams, site) { 
+	console.log('team:', $stateParams.team);
+	site.load('teams', $scope.url_prefix() + '/site/' + $stateParams.league + '/teams', $scope).then(function (teams) {
 		teams.forEach(function (team) {
 			team.team = team.profile.split(':')[1];
 			if ( team.team == $stateParams.team ) {
-				$scope.team = team;
-				site.load('players', $scope.url_prefix() + '/site/' + $stateParams.league + '/' + $stateParams.team, $scope)
+				site.load('players', $scope.url_prefix() + '/site/' + $stateParams.league + '/' + $stateParams.team, $scope).then(function (players) {
+					$scope.players = players;
+					$scope.team = team;
+				})
 			} 
 		})
 	})	
@@ -172,23 +212,6 @@ angular.module('app', ['ngMaterial', 'LocalStorageModule', 'ui.router']).run(fun
             var elems = (element.prop("tagName") === 'A') ? element : element.find('a');
             elems.attr("target", "_blank");
         }
-    };
-}).directive('backImg', function() {
-    return {
-    	link: function(scope, element, attrs) {
-    		console.log(attrs.backImg)
-    		var entity = JSON.parse(attrs.backImg);
-    		if ( entity.twitter ) {
-    			var url = 'http://' + entity.site + '/' + entity.league + '/bgimage_large/' + entity.twitter + '.png'
-				element.css({
-	    			'background-image': 'url(' + url +')',
-	    			'background-size' : 'cover'
-	    		});
-    			element.addClass("md-tall")
-    		} else {
-    			console.log('no')
-    		}
-    	}
     };
 });
 
